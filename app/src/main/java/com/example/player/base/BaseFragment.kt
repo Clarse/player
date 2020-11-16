@@ -55,7 +55,7 @@ abstract class BaseFragment : Fragment() {
     }
 
     fun myToast(msg: String) {
-        context.run { Toast.makeText(this, msg, Toast.LENGTH_SHORT).show() }
+        activity?.runOnUiThread { Toast.makeText(context, msg, Toast.LENGTH_SHORT).show() }
     }
 
 }
